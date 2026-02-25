@@ -1,0 +1,52 @@
+body {
+    display: grid;
+    grid-template-areas:
+    "cabeça cabeça"
+    "braço corpo"
+    "pe pe";
+    grid-template-rows: 100px 500px 100px;
+    grid-template-columns: 400px auto;
+    background-color: darkgray;
+
+}
+
+
+
+
+header{
+    background-color: rgb(255, 183, 0);
+    grid-area: cabeça;
+
+}
+
+aside{
+    background-color: aqua;
+    grid-area: braço;
+
+}
+
+main{
+    background-color: rgb(255, 106, 0);
+    grid-area: corpo;
+
+}
+
+footer{
+    background-color: rgb(255, 0, 0);
+    grid-area: pe;
+
+}
+
+@media only screen and (max-width: 850){
+    body{
+        display: grid;
+        grid-template-areas:
+        "cabeça"
+        "braço"
+        "corpo"
+        "pe";
+        grid-template-rows: 100px; 
+    }
+    
+}
+
