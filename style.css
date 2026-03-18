@@ -4,35 +4,50 @@ body {
     "cabeça cabeça"
     "braço corpo"
     "pe pe";
-    grid-template-rows: 100px 500px 100px;
+    grid-template-rows: 170px 500px 100px;
     grid-template-columns: 400px auto;
     background-color: darkgray;
 
 }
 
+.monza{
+    height: 300px;
+}
 
+.opala{
+    height: 300px;
+}
+
+.logo{ 
+    height: 160px;
+
+
+}
 
 
 header{
-    background-color: rgb(255, 183, 0);
+    background-color: rgb(252, 180, 0);
     grid-area: cabeça;
+
 
 }
 
 aside{
-    background-color: aqua;
+    background-color: rgb(119, 119, 119);
     grid-area: braço;
+    height: auto;
 
 }
 
 main{
-    background-color: rgb(255, 106, 0);
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
     grid-area: corpo;
 
 }
 
 footer{
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(255, 166, 0);
     grid-area: pe;
 
 }
@@ -61,4 +76,5 @@ footer{
     border: yellow 2px solid;
     background-color: aqua(101, 101, 201);
 }
+ 
 
