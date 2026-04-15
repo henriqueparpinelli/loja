@@ -1,80 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    height: 60px;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+.menu-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #ffeb3b;
+}
+
+/* Produtos */
+.produtos-grid {
     display: grid;
-    grid-template-areas:
-    "cabeça cabeça"
-    "braço corpo"
-    "pe pe";
-    grid-template-rows: 170px 500px 100px;
-    grid-template-columns: 400px auto;
-    background-color: darkgray;
-
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-.monza{
-    height: 300px;
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
 
-.opala{
-    height: 300px;
+.card:hover {
+    transform: translateY(-8px);
 }
 
-.logo{ 
-    height: 160px;
+.produto-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
 
+.card-content {
+    padding: 1rem;
+    text-align: center;
+}
 
+.card-content h3 {
+    margin: 0.5rem 0;
+    color: #1e3a8a;
+}
+
+.preco {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #d32f2f;
+    margin: 0.8rem 0;
+}
+
+.card-buttons {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-detalhes, .btn-comprar {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-detalhes {
+    background: #64748b;
+    color: white;
+}
+
+.btn-comprar {
+    background: #2563eb;
+    color: white;
 }
 
 
-header{
-    background-color: rgb(252, 180, 0);
-    grid-area: cabeça;
-
-
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
 }
 
-aside{
-    background-color: rgb(119, 119, 119);
-    grid-area: braço;
-    height: auto;
-
+.modal-content {
+    background: white;
+    max-width: 500px;
+    width: 90%;
+    padding: 1.5rem;
+    border-radius: 12px;
+    position: relative;
 }
 
-main{
-    background-color: rgb(0, 0, 0);
-    color: #ffffff;
-    grid-area: corpo;
-
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
-footer{
-    background-color: rgb(255, 166, 0);
-    grid-area: pe;
 
+.section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-@media only screen and (max-width: 850){
-    body{
-        display: grid;
-        grid-template-areas:
-        "cabeça"
-        "braço"
-        "corpo"
-        "pe";
-        grid-template-rows: 100px 50px auto 100px; 
-        grid-template-columns: auto;
+.hidden {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .menu-hamburger {
+        display: block;
     }
 
-    
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #1e3a8a;
+        padding: 1rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .produtos-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
 }
 
-.card{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 50px ;
-    align-items: center;
-    border: yellow 2px solid;
-    background-color: aqua(101, 101, 201);
+@media (max-width: 480px) {
+    .card-buttons {
+        flex-direction: column;
+    }
 }
- 
-

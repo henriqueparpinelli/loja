@@ -3,67 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>loja concessionaria</title>
+    <title>Kanson - Concessionária</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+   
+    <header>
+        <div class="header-container">
+            <img src="Gemini_Generated_Image_fa9teffa9teffa9t.png" alt="Logo Clássicos Turbo" class="logo">
+            <h1>Clássicos Turbo</h1>
+            
+            
+            <button class="menu-hamburger" aria-label="Menu">
+                
+            </button>
+
+            <nav class="nav-menu">
+                <a href="#produtos">Produtos</a>
+                <a href="#carrinho">Carrinho (<span id="cart-count">0</span>)</a>
+                <a href="#cadastro">Cadastro</a>
+                <a href="#sobre">Sobre a Loja</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        
+        <section id="produtos" class="section">
+            <h2>Nossos Clássicos</h2>
+            <div class="produtos-grid">
+
+              
+                <div class="card">
+                    <img src="Gemini_Generated_Image_aawcm1aawcm1aawc.png" alt="Monza Tubarão" class="produto-img">
+                    <div class="card-content">
+                        <h3>Monza Tubarão (1991-1996)</h3>
+                        <p class="descricao">Motor turbo, ícone dos anos 90</p>
+                        <p class="preco">R$ 12.000,00</p>
+                        <div class="card-buttons">
+                            <button class="btn-detalhes" data-id="1">Ver detalhes</button>
+                            <button class="btn-comprar" data-id="1">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+
+             
+                <div class="card">
+                    <img src="unnamed.jpg" alt="Chevrolet Opala" class="produto-img">
+                    <div class="card-content">
+                        <h3>Chevrolet Opala (1968-1992)</h3>
+                        <p class="descricao">O verdadeiro ícone brasileiro</p>
+                        <p class="preco">R$ 15.000,00</p>
+                        <div class="card-buttons">
+                            <button class="btn-detalhes" data-id="2">Ver detalhes</button>
+                            <button class="btn-comprar" data-id="2">Adicionar ao Carrinho</button>
+                        </div>
+
+                        <div class="card">
+                            <img src="Gemini_Generated_Image_kmp8lkkmp8lkkmp8.png" alt="Santana" class="produto-img">
+                            <div class="card-content">
+                                <h3>Santana</h3>
+                                <p class="descricao">O verdadeiro ícone brasileiro</p>
+                                <p class="preco">R$ 18.000,00</p>
+                                <div class="card-buttons">
+                                    <button class="btn-detalhes" data-id="2">Ver detalhes</button>
+                                    <button class="btn-comprar" data-id="2">Adicionar ao Carrinho</button>
+                                </div>
+                    </div>
+                </div>
+
+        
+            </div>
+        </section>
+
+        
+        <section id="carrinho" class="section hidden">
+            <h2>Seu Carrinho</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <strong>Total: R$ <span id="cart-total">0,00</span></strong>
+            </div>
+            <button class="btn-finalizar">Finalizar Compra</button>
+        </section>
+
     
-<header>
-    <img src="Gemini_Generated_Image_fa9teffa9teffa9t.png"  class="logo">
-</header>
-<aside></aside>
-<main>
-    <div   class="letra">   
-    <div class="pai">
-        <div class="card">
-      <img src="Gemini_Generated_Image_aawcm1aawcm1aawc.png" alt="imagem_produto" class="monza">
-      <p class="d_produto"> Monza Tubarão (1991-1996) turbinao </p>
-      <p class="p_produto">$ 12.000</p>
-      <p class="botão_produto"><a class="letra_botão"  href="monza tubarão"></a></p>
+        <section id="cadastro" class="section hidden">
+            <h2>Cadastro de Cliente</h2>
+            <form id="form-cadastro">
+                <input type="text" placeholder="Nome completo" required>
+                <input type="email" placeholder="E-mail" required>
+                <input type="tel" placeholder="Telefone" required>
+                <input type="text" placeholder="Cidade" value="Curitiba" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
 
+        
+        <section id="sobre" class="section hidden">
+            <h2>Sobre a Clássicos Turbo</h2>
+            <p>Trabalhamos com os melhores carros clássicos brasileiros com preços acessíveis e muita paixão por motores antigos.</p>
+            <p>Venha fazer parte dessa família de apaixonados por velocidade e nostalgia!</p>
+        </section>
+
+    </main>
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modal-img" src="" alt="">
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-descricao"></p>
+            <p id="modal-preco" class="preco"></p>
+            <button id="modal-add-cart">Adicionar ao Carrinho</button>
+        </div>
     </div>
-    <div class="pai">
-    <div class="card">
-    <img src="unnamed.jpg"  alt="imagem_produto"   class="opala">
-     <p class="d_produto"> (Chevrolet Opala é um ícone brasileiro, produzido de 1968 a 1992) </p>
-      <p class="p_produto">$ 15.000</p>
-      <p class="botão_produto"><a class="letra_botão"  href="opala"></a></p>
 
-    </div>
-    </div>
-</main>
-<footer></footer>
+    <footer>
+    </footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
